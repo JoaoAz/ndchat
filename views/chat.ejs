@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h4><%- (typeof mensagem !== 'undefined') ? mensagem:'' %></h4>
+    <h4><% if(typeof mensagem !== 'undefined') { %>
     <% for(var i=0; i<mensagem.length; i++) { %>
         <li><%= mensagem[i] %></li>
      <% } %>
+     <% } %></h4>
     <form action="processa" method="get">
         <input type="text" name="texto">
         <input type="submit" value="enviar">
