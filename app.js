@@ -6,7 +6,7 @@ servidor.set("view engine","ejs");
 
 servidor.use(express.static("ficheiros"));
 var mensagem = [];
-//servidor.use(bodyParser.urlencoded({extended:false}));
+servidor.use(bodyParser.urlencoded({extended:false}));
 /*
 servidor.use(function (req, res, next) {
     res.locals.resultado = null
@@ -17,8 +17,8 @@ servidor.get("/",function(pedido,resposta){
 resposta.render("chat");
 })
 
-servidor.get("/processa",function(pedido,resposta){
-    let texto = pedido.query.texto;
+servidor.post("/processa",function(pedido,resposta){
+    let texto = pedido.body.texto;
     mensagem.push(texto);
     resposta.render("chat",{mensagem:mensagem});
     })
