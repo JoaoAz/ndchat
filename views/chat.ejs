@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h4><% if(typeof mensagem !== 'undefined') { %>
+    <h1><a href="/">Verificar mensagens</a></h1>
+    <ul><% if(typeof mensagem !== 'undefined') { %>
     <% for(var i=0; i<mensagem.length; i++) { %>
         <li><%= mensagem[i] %></li>
      <% } %>
-     <% } %></h4>
+     <% } %></ul>
     <form action="processa" method="post">
         <input type="text" name="texto">
         <input type="submit" value="enviar">
