@@ -14,13 +14,13 @@ servidor.use(function (req, res, next) {
   })
 */
 servidor.get("/",function(pedido,resposta){
-resposta.render("chat");
+resposta.render("chat",{mensagem:mensagem});
 })
 
 servidor.post("/processa",function(pedido,resposta){
     let texto = pedido.body.texto;
     mensagem.push(texto);
-    resposta.render("chat",{mensagem:mensagem});
+    resposta.redirect("/");
     })
     
 servidor.listen(3333,()=>{
